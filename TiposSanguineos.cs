@@ -2,7 +2,14 @@ using System;
 
 class TiposSanguineos
 {                                           //0    1      2     3     4       5     6     7
-    public string[] tipos = new string[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "0+", "O-" };
+    private string[] tipos = new string[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+    public string tipo { get; private set; }
+
+    public TiposSanguineos(string tipo){
+      if(tipo.Length == 2){
+        this.tipo = tipo;
+      }
+    }
 
     // recebe um tipo sanguineo e retorna uma lista de tipos sanguineos que podem receber dos doadores.
     public string[] listarQuemPodeReceber(string tipoRecepto)
@@ -57,8 +64,8 @@ class TiposSanguineos
         return aux;
     }
 
-    //Retorna verdadeiro se o receptor poder receber o tipo do doador
-    public bool podeReceber(string tipoDoador, string tipoRecptor)
+    //Retorna verdadeiro se o receptor poder receber o tipo sangue do doador
+    public bool podeReceber(string tipoRecptor, string tipoDoador)
     {
         string[] listaPossiveisTiposSanguineos = listarQuemPodeReceber(tipoRecptor);
 
