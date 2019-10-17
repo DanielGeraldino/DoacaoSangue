@@ -32,4 +32,10 @@ class Clinica{
     Receptor recptor = new Receptor(nome, tipoSangue, prioridade);
     recptores.Add(recptor);
   }
+
+  public void imprimirDoadores(){
+    foreach(Doador doador in doadores){
+      Console.WriteLine(doador.imprimirDados());
+    }
+  }
 }
