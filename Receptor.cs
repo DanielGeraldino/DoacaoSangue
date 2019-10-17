@@ -17,6 +17,10 @@ class Receptor{
   public string imprimirTipoSangue(){
     return tipoSangue.tipo;
   }
+
+  public string getDados(){
+    return $"{nome},{imprimirTipoSangue()},{prioridade}";
+  }
   
 }
 

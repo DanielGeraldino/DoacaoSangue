@@ -21,7 +21,11 @@ class Doador {
     }
 
     public string imprimirTipoSangue(){
-    return tipoSangue.tipo;
-  }
+      return tipoSangue.tipo;
+    }
+
+    public string imprimirDados(){
+      return $"{nome},{imprimirTipoSangue()},{idade},{peso}";
+    }
 }
 
