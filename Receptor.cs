@@ -14,12 +14,16 @@ class Receptor{
     return tipoSangue.podeReceber(tipoSangue.tipo, tipo);
   }
 
-  public string imprimirTipoSangue(){
+  public string getTipoSanguineo(){
     return tipoSangue.tipo;
   }
 
-  public string getDados(){
-    return $"{nome},{imprimirTipoSangue()},{prioridade}";
+  public string getNome(){
+    return nome;
+  }
+
+  public string imprimirDados(){
+    return $"{nome},{getTipoSanguineo()},{prioridade}";
   }
   
 }

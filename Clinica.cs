@@ -33,9 +33,32 @@ class Clinica{
     recptores.Add(recptor);
   }
 
-  public void imprimirDoadores(){
-    foreach(Doador doador in doadores){
-      Console.WriteLine(doador.imprimirDados());
+  public void imprimirCadastros(char escolha){
+    if(escolha == 'd'){
+      foreach(Doador doador in doadores){
+        Console.WriteLine(doador.imprimirDados());
+      }
+    } else if(escolha == 'r'){
+      foreach(Receptor recptor in recptores){
+        Console.WriteLine(recptor.imprimirDados());
+      }
+    }
+  }
+
+  public void doarSangue(Doador doador, Receptor recptor){
+    if(doador.podeDoar() && recptor.podeReceber(doador.getTipoSanguineo())){
+      
+      string registro = $"Doado sangue de {doador.getNome()} do tipo {doador.getTipoSanguineo()} para {recptor.getNome()} do tipo {recptor.getTipoSanguineo()}";
+
+      ComunicaoArquivo.escreva(registro, "registro_doacoes.txt");
+
+      doadores.RemoveAt(doadores.IndexOf(doador));
+      recptores.RemoveAt(recptores.IndexOf(recptor));
+    } else {
+
+      string registro = $"Rejeicao: Sangue, idade ou peso do {doador.getNome()} não permite doar para {recptor.getNome()}, cujo o tipo sanguineo do {doador.getNome()} é {doador.getTipoSanguineo()}";
+
+      ComunicaoArquivo.escreva(registro, "registro_doacoes.txt");
     }
   }
 }
