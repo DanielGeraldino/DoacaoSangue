@@ -15,6 +15,7 @@ class Clinica{
     this.doadores = new List<Doador>();
   } 
 
+  //Metodo para adicionar doador na lista de doares
   public void addDoador(Doador doador){
     this.doadores.Add(doador);
   }
@@ -23,7 +24,7 @@ class Clinica{
     Doador doador = new Doador(nome, tipoSangue, idade, peso);
     doadores.Add(doador);
   }
-
+  //Metodo para adicionar doador na lista de doares
   public void addReceptor(Receptor recptor){
     this.recptores.Add(recptor);
   }
@@ -32,8 +33,11 @@ class Clinica{
     Receptor recptor = new Receptor(nome, tipoSangue, prioridade);
     recptores.Add(recptor);
   }
-
+  //metodo para imprimir no console doadores ou recptores
   public void imprimirCadastros(char escolha){
+    
+    Console.WriteLine("nome,Sangue,idade,peso");
+    
     if(escolha == 'd'){
       foreach(Doador doador in doadores){
         Console.WriteLine(doador.imprimirDados());
@@ -44,7 +48,7 @@ class Clinica{
       }
     }
   }
-
+  //metodo que registra a doarção de sangue
   public void doarSangue(Doador doador, Receptor recptor){
     if(doador.podeDoar() && recptor.podeReceber(doador.getTipoSanguineo())){
       

@@ -6,7 +6,7 @@ class MainClass {
     Clinica clinica = new Clinica(1, "Clinica para Doação de sangue");
 
     Receptor receptor = new Receptor("Daniel", "A-", 1);
-    Doador doador = new Doador("Joao", "O-", 18, 78.0f);
+    Doador doador = new Doador("Joao", "O+", 18, 78.0f);
 
     clinica.addDoador(doador);
     clinica.addReceptor(receptor);
@@ -14,10 +14,11 @@ class MainClass {
     clinica.imprimirCadastros('d');
     clinica.imprimirCadastros('r');
 
-    Console.WriteLine("Executando a doação");
+    Console.WriteLine();
+
     clinica.doarSangue(doador, receptor);
-    
-    clinica.imprimirCadastros('d');
+
+    ComunicaoArquivo.leia("registro_doacoes.txt");
 
   }
 }

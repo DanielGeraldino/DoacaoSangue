@@ -1,3 +1,8 @@
-10/18/2019 12:37:25 AM Rejeicao: Sangue, idade ou peso do Joao não permite doar para Daniel, cujo o tipo sanguineo é Joao
-10/18/2019 12:38:20 AM Rejeicao: Sangue, idade ou peso do Joao não permite doar para Daniel, cujo o tipo sanguineo do Joao é O+
-10/18/2019 12:38:46 AM Doado sangue de Joao do tipo O- para Daniel do tipo A-
+10/18/2019 2:26:44 AM Doado sangue de Joao do tipo O- para Daniel do tipo A-
+10/18/2019 2:26:47 AM Doado sangue de Joao do tipo O- para Daniel do tipo A-
+10/18/2019 2:27:43 AM Doado sangue de Joao do tipo A- para Daniel do tipo A-
+10/18/2019 2:27:48 AM Doado sangue de Joao do tipo A- para Daniel do tipo A-
+10/18/2019 2:27:50 AM Doado sangue de Joao do tipo A- para Daniel do tipo A-
+10/18/2019 2:28:09 AM Rejeicao: Sangue, idade ou peso do Joao não permite doar para Daniel, cujo o tipo sanguineo do Joao é O+
+10/18/2019 2:30:06 AM Rejeicao: Sangue, idade ou peso do Joao não permite doar para Daniel, cujo o tipo sanguineo do Joao é O+
+10/18/2019 2:31:29 AM Rejeicao: Sangue, idade ou peso do Joao não permite doar para Daniel, cujo o tipo sanguineo do Joao é O+
