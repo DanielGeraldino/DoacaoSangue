@@ -13,7 +13,11 @@ class Clinica{
     this.nome = nome;
     this.recptores = new List<Receptor>();
     this.doadores = new List<Doador>();
-  } 
+  }
+
+  public string getNome(){
+    return nome;
+  }
 
   //Metodo para adicionar doador na lista de doares
   public void addDoador(Doador doador){
