@@ -36,33 +36,53 @@ class Clinica{
   //metodo para imprimir no console doadores ou recptores
   public void imprimirCadastros(char escolha){
     
-    Console.WriteLine("nome,Sangue,idade,peso");
-    
+    Console.WriteLine("codigo, nome, sangue, idade, peso");
+    int count = 0;
+
     if(escolha == 'd'){
       foreach(Doador doador in doadores){
-        Console.WriteLine(doador.imprimirDados());
+        Console.WriteLine(count + " - " + doador.imprimirDados());
+        count++;
       }
     } else if(escolha == 'r'){
       foreach(Receptor recptor in recptores){
-        Console.WriteLine(recptor.imprimirDados());
+        Console.WriteLine(count + " - " + recptor.imprimirDados());
+        count++;
       }
     }
   }
   //metodo que registra a doarção de sangue
-  public void doarSangue(Doador doador, Receptor recptor){
+  //public void doarSangue(Doador doador, Receptor recptor){
+  public bool doarSangue(int codDoador, int codRecptor){
+
+    bool deuCerto = false;
+
+    Doador doador = doadores[codDoador];
+    Receptor recptor = recptores[codRecptor];
+
     if(doador.podeDoar() && recptor.podeReceber(doador.getTipoSanguineo())){
       
       string registro = $"Doado sangue de {doador.getNome()} do tipo {doador.getTipoSanguineo()} para {recptor.getNome()} do tipo {recptor.getTipoSanguineo()}";
 
       ComunicaoArquivo.escreva(registro, "registro_doacoes.txt");
 
+      //doadores.RemoveAt(doadores.IndexOf(doador));
+      //recptores.RemoveAt(recptores.IndexOf(recptor));
+
       doadores.RemoveAt(doadores.IndexOf(doador));
       recptores.RemoveAt(recptores.IndexOf(recptor));
+
+      deuCerto = true;
+
     } else {
 
       string registro = $"Rejeicao: Sangue, idade ou peso do {doador.getNome()} não permite doar para {recptor.getNome()}, cujo o tipo sanguineo do {doador.getNome()} é {doador.getTipoSanguineo()}";
 
       ComunicaoArquivo.escreva(registro, "registro_doacoes.txt");
+
+      deuCerto = false;
     }
+
+    return deuCerto;
   }
 }

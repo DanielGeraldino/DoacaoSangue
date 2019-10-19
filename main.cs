@@ -26,6 +26,8 @@ class MainClass {
       string tipo = "";
       int idade = 0;
       float altura = 0.0f;
+      int codigoDoador = -999;
+      int codigoRecptor = -999;
       
       switch(escolha){
 
@@ -47,7 +49,7 @@ class MainClass {
 
           Console.WriteLine("----------------------------------");
 
-          clinica.addDoador(new Doador(nome, tipo, idade, altura));
+          clinica.addDoador(new Doador(nome, tipo.ToUpper(), idade, altura));
           break;
         
         case '2':
@@ -62,13 +64,26 @@ class MainClass {
           Console.Write("Digite o tipo sanguineo: ");
           tipo = Console.ReadLine();
 
-          clinica.addReceptor(new Receptor(nome, tipo, 1));
+          clinica.addReceptor(new Receptor(nome, tipo.ToUpper(), 1));
 
           Console.WriteLine("----------------------------------");
           break;
         
         case '3':
-          // doar
+          Console.Clear();
+          Console.WriteLine("Para realiaza uma doação é necessario\ndigitar o codigo do recptor e doador\nde acordo com a fila.");
+          Console.WriteLine("----------------------------------");
+          Console.Write("Digite o codigo doador: ");
+          codigoDoador = int.Parse(Console.ReadLine());
+          Console.Write("Digite o codigo recptor: ");
+          codigoRecptor = int.Parse(Console.ReadLine());
+
+          Console.WriteLine("Doação realizada: " + clinica.doarSangue(codigoDoador, codigoRecptor));
+
+          Console.WriteLine("----------------------------------");
+          Console.WriteLine("Utilize a função 6 para analisar os registros.");
+          Console.Write("Digite entre para voltar.");
+          Console.ReadLine();
           break;
         case '4':
           Console.Clear();
