@@ -6,8 +6,10 @@ class TiposSanguineos
     public string tipo { get; private set; }
 
     public TiposSanguineos(string tipo){
-      if(tipo.Length == 2){
+      if(validarTipoSanguineo(tipo)){
         this.tipo = tipo;
+      } else {
+        throw new System.ArgumentException("", "Tipo sanguineo invalidado!");
       }
     }
 
@@ -78,6 +80,16 @@ class TiposSanguineos
         }
         return false;
     }
+
+    private bool validarTipoSanguineo(string tipo){
+      for(int i = 0; i < tipos.Length; i++){
+        if(tipos[i] == tipo){
+          return true;
+        }
+      }
+      return false;
+    }
+
 }
 
 
