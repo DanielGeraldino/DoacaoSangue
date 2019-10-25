@@ -47,9 +47,9 @@ class MainClass {
             Console.Write("Digite o nome: ");
             nome = Console.ReadLine();
 
-            Console.Write("Digite o tipo sanguineo: ");
+            Console.Write("Digite o tipo sanguineo(exemplo A+): ");
             tipo = Console.ReadLine();
-
+            
             Console.Write("Digite a idade: ");
             idade = int.Parse(Console.ReadLine());
 

@@ -21,12 +21,25 @@ class Clinica{
 
   //Metodo para adicionar doador na lista de doares
   public void addDoador(Doador doador){
-    this.doadores.Add(doador);
+    if(doador.podeDoar()){
+      doadores.Add(doador);
+    } else {
+      Console.WriteLine("Idade ou peso abaixo do permitido, cadastro cancelado.");
+      Console.ReadLine();
+    }
   }
 
   public void addDoador(string nome, string tipoSangue, int idade, float peso){
+    
     Doador doador = new Doador(nome, tipoSangue, idade, peso);
-    doadores.Add(doador);
+    
+    if(doador.podeDoar()){
+
+      doadores.Add(doador);
+    } else {
+      Console.WriteLine("Idade ou peso abaixo do permitido, cadastro cancelado.");
+      Console.ReadLine();
+    }
   }
   //Metodo para adicionar doador na lista de doares
   public void addReceptor(Receptor recptor){

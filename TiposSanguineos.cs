@@ -59,8 +59,8 @@ class TiposSanguineos
             aux = new string[] { tipos[7] };
             return aux;
         }
-
-        aux = new string[] { "teste" };
+        // retorna uma lista vazia se for falsa para todas expressões anteriores 
+        aux = new string[0];
         return aux;
     }
 
